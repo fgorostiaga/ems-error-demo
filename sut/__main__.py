@@ -8,7 +8,7 @@ hostport = 'http://' + ems + ":8181"
 
 for _ in range(60):
     json_message = {'APPID': int(appid)}
-    requests.post(self.hostport, json=json_message)
+    requests.post(hostport, json=json_message)
     sleep(1)
 
 
