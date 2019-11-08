@@ -2,6 +2,7 @@ import os
 from websocket import create_connection
 import json
 import time
+import requests
 
 if __name__ == "__main__":
     print("Starting the test")
