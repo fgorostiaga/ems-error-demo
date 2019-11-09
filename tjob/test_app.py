@@ -37,7 +37,7 @@ if __name__ == "__main__":
     print(response.content)
  
     start = time.time()
-    while time.time() < start + 60:
+    while time.time() < start + 180:
 		result = ws.recv()
 		result = json.loads(result)
 		print result
