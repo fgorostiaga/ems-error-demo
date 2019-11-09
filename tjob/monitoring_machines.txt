@@ -1,5 +1,5 @@
-stream bool mustsend := e.path("APPID")
-stream num appid := e.getstr("APPID")
+stream bool mustsend := e.path(APPID)
+stream num appid := e.getstr(APPID)
 
 trigger mustsend do emit `{"tjob id" : TJOBID, "app id" : "%appid" }` on #sendevent
 
