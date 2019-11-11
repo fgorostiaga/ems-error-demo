@@ -49,9 +49,12 @@ if __name__ == "__main__":
  
     start = time.time()
     while time.time() < start + 180:
-        result = ws.recv()
-        result = json.loads(result)
-        print result
+        try:
+            result = ws.recv()
+            result = json.loads(result)
+            print result
+        except Exception, e:
+            print "test exception", e
 
     print("Ending the test")
 
