@@ -3,6 +3,7 @@ from websocket import create_connection
 import json
 import time
 import requests
+import sys
 
 if __name__ == "__main__":
     print("Starting the test")
@@ -12,13 +13,13 @@ if __name__ == "__main__":
     headers = {'content-type': 'text/plain'}
     stampers = ""
     monMachines = ""
-    
-    url = "ws://" + ems + ":3232"
-    ws = create_connection(url)
 
     # get the stampers from file
     with open(os.environ['PWD'] + "/" + "stampers.txt") as f:
       stampers = f.read()
+      
+    print stampers
+	sys.stdout.flush()
 
     # send stampers to EMS
     url = "http://" + ems + ":8888/stamper/tag0.1"
@@ -30,11 +31,21 @@ if __name__ == "__main__":
       monMachines = f.read()
 
     monMachines = monMachines.replace("TJOBID", tjobid)
+    
+    print monMachines
+	sys.stdout.flush()
 
     # send the monitoring machines to EMS
     url = "http://" + ems + ":8888/MonitoringMachine/signals0.1"
     response = requests.post(url, headers=headers, data=monMachines)
     print(response.content)
+    
+    url = "ws://" + ems + ":3232"
+    ws = create_connection(url)
+    
+    print "starting loop"
+    sys.stdout.flush()
+
  
     start = time.time()
     while time.time() < start + 180:
