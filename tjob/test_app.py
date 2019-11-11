@@ -19,7 +19,7 @@ if __name__ == "__main__":
       stampers = f.read()
       
     print stampers
-	sys.stdout.flush()
+    sys.stdout.flush()
 
     # send stampers to EMS
     url = "http://" + ems + ":8888/stamper/tag0.1"
@@ -33,7 +33,7 @@ if __name__ == "__main__":
     monMachines = monMachines.replace("TJOBID", tjobid)
     
     print monMachines
-	sys.stdout.flush()
+    sys.stdout.flush()
 
     # send the monitoring machines to EMS
     url = "http://" + ems + ":8888/MonitoringMachine/signals0.1"
@@ -49,9 +49,9 @@ if __name__ == "__main__":
  
     start = time.time()
     while time.time() < start + 180:
-		result = ws.recv()
-		result = json.loads(result)
-		print result
+        result = ws.recv()
+        result = json.loads(result)
+        print result
 
     print("Ending the test")
 
