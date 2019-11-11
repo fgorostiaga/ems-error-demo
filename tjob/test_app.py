@@ -46,7 +46,6 @@ if __name__ == "__main__":
     print "starting loop"
     sys.stdout.flush()
 
- 
     start = time.time()
     while time.time() < start + 180:
         try:
@@ -55,6 +54,7 @@ if __name__ == "__main__":
             print result
         except Exception, e:
             print "test exception", e
+            sys.stdout.flush()
 
     print("Ending the test")
 
