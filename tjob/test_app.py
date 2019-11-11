@@ -59,5 +59,3 @@ if __name__ == "__main__":
     print("Ending the test")
     sys.stdout.flush()
 
-    return True
-
