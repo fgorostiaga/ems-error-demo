@@ -57,4 +57,7 @@ if __name__ == "__main__":
             sys.stdout.flush()
 
     print("Ending the test")
+    sys.stdout.flush()
+
+    return True
 
