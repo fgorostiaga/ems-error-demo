@@ -11,7 +11,8 @@ print appid
 
 for i in range(100):
     json_message = {'APPID': int(appid)}
-    requests.post(hostport, json=json_message)
+    r = requests.post(hostport, json=json_message)
+    print r.content
     print "sent message n", i, "on app", appid
     sys.stdout.flush()
     sleep(1)

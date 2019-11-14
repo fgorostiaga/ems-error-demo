@@ -54,7 +54,7 @@ if __name__ == "__main__":
             print result
         except Exception, e:
             print "test exception", e
-            sys.stdout.flush()
+        sys.stdout.flush()
         
     print("Ending the test")
     sys.stdout.flush()
