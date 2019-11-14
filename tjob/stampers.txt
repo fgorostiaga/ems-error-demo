@@ -1,1 +1,3 @@
 when e.tag(#sendevent) do #websocket
+when e.tag(#stop) do #websocket
+

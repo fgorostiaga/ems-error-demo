@@ -7,9 +7,9 @@ ems = os.environ["ET_EMS_LSBEATS_HOST"]
 appid = os.environ["APPID"]
 hostport = 'http://' + ems + ":8181"
 
-print appid
+print "App ID", appid
 
-for i in range(100):
+for i in range(60):
     json_message = {'APPID': int(appid)}
     r = requests.post(hostport, json=json_message)
     print r.content
@@ -17,4 +17,8 @@ for i in range(100):
     sys.stdout.flush()
     sleep(1)
 
+json_message = {'STOP': True}
+r = requests.post(hostport, json=json_message)
+print r.content
+sys.stdout.flush()
 

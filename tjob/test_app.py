@@ -47,11 +47,13 @@ if __name__ == "__main__":
     sys.stdout.flush()
 
     start = time.time()
-    while time.time() < start + 180:
+    while time.time() < start + 100:
         try:
             result = ws.recv()
             result = json.loads(result)
             print result
+            if "#stop" in result["channels"]:
+                break;
         except Exception, e:
             print "test exception", e
         sys.stdout.flush()

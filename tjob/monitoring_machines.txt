@@ -1,5 +1,6 @@
 stream bool mustsend := e.path(APPID)
 stream num appid := e.getnum(APPID)
+stream bool muststop := e.path(STOP)
 
 trigger mustsend do emit `{"tjob id" : TJOBID, "app id" : "%appid" }` on #sendevent
-
+trigger muststop do emit muststop on #stop
