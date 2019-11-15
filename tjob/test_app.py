@@ -56,6 +56,7 @@ if __name__ == "__main__":
         try:
             result = ws.recv()
             result = json.loads(result)
+            print "[TJOBIP IS "+ IPAddr + " , CONTENT: " + result "]"
             print result
             if "#stop" in result["channels"]:
                 break;
