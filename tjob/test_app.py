@@ -17,7 +17,7 @@ if __name__ == "__main__":
     headers = {'content-type': 'text/plain'}
     stampers = ""
     monMachines = ""
-    emsId = str(random.randint())
+    emsId = str(random.randint(1,1000))
 
     # get the stampers from file
     with open(os.environ['PWD'] + "/" + "stampers.txt") as f:
