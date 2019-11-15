@@ -35,6 +35,7 @@ if __name__ == "__main__":
 
     monMachines = monMachines.replace("TJOBID", tjobid)
     monMachines = monMachines.replace("DEPLOYIP", IPAddr)
+    monMachines = monMachines.replace("TJOBEMSIP", ems)
     
     print monMachines
     sys.stdout.flush()

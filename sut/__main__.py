@@ -15,7 +15,7 @@ print "App ID", appid
 print "EMS url", hostport
 
 for i in range(240):
-    json_message = {'APPID': int(appid), 'NUMBER': i, "SUTIP": IPAddr}
+    json_message = {'APPID': int(appid), 'NUMBER': i, "SUTIP": IPAddr, "EMSIP": ems}
     r = requests.post(hostport, json=json_message)
     print r.content
     print "sent message n", i, "on app", appid

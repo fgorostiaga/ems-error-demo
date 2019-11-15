@@ -3,6 +3,7 @@ stream num appid := e.getnum(APPID)
 stream num number := e.getnum(NUMBER)
 stream bool muststop := e.path(STOP)
 stream string sutip := e.getstr(SUTIP)
+stream string emsip := e.getstr(EMSIP)
 
-trigger mustsend do emit `{"tjob id" : TJOBID, "app id" : "%appid", "number" : "%number", "TJobIP": "DEPLOYIP", "SuTIP": "%sutip" }` on #sendevent
+trigger mustsend do emit `{"tjob id" : TJOBID, "app id" : "%appid", "number" : "%number", "TJobIP": "DEPLOYIP", "SuTIP": "%sutip", "SuTEMSIP": "%emsip", "TJobEMSIP": "TJobEMSIP" }` on #sendevent
 trigger muststop do emit muststop on #stop
