@@ -16,6 +16,7 @@ if __name__ == "__main__":
     headers = {'content-type': 'text/plain'}
     stampers = ""
     monMachines = ""
+    emsId = str(os.urandom(10))
 
     # get the stampers from file
     with open(os.environ['PWD'] + "/" + "stampers.txt") as f:
@@ -36,6 +37,7 @@ if __name__ == "__main__":
     monMachines = monMachines.replace("TJOBID", tjobid)
     monMachines = monMachines.replace("DEPLOYIP", IPAddr)
     monMachines = monMachines.replace("TJOBEMSIP", ems)
+    monMachines = monMachines.replace("EMSID", emsId)
     
     print monMachines
     sys.stdout.flush()
@@ -56,7 +58,7 @@ if __name__ == "__main__":
         try:
             result = ws.recv()
             result = json.loads(result)
-            print "[TJOBIP IS "+ IPAddr + " , CONTENT: " + str(result) + "]"
+            print "[TJOBIP IS "+ IPAddr + ", EMSID WAS: "+emsId+" , CONTENT: " + str(result) + "]"
             if "#stop" in result["channels"]:
                 break;
         except Exception, e:

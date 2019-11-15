@@ -5,5 +5,5 @@ stream bool muststop := e.path(STOP)
 stream string sutip := e.getstr(SUTIP)
 stream string emsip := e.getstr(EMSIP)
 
-trigger mustsend do emit `{"tjob id" : TJOBID, "app id" : "%appid", "number" : "%number", "TJobIP": "DEPLOYIP", "SuTIP": "%sutip", "SuTEMSIP": "%emsip", "TJobEMSIP": "TJOBEMSIP"}` on #sendevent
+trigger mustsend do emit `{"tjob id" : TJOBID, "app id" : "%appid", "number" : "%number", "TJobIP": "DEPLOYIP", "SuTIP": "%sutip", "SuTEMSIP": "%emsip", "TJobEMSIP": "TJOBEMSIP", "EMSId":"EMSID"}` on #sendevent
 trigger muststop do emit muststop on #stop
