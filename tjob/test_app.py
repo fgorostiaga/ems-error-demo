@@ -57,7 +57,6 @@ if __name__ == "__main__":
             result = ws.recv()
             result = json.loads(result)
             print result
-            print str(ws.remote_address)
             if "#stop" in result["channels"]:
                 break;
         except Exception, e:
