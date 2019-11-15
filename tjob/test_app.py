@@ -4,12 +4,15 @@ import json
 import time
 import requests
 import sys
+import socket
 
 if __name__ == "__main__":
     print("Starting the test")
     
     ems = os.environ["ET_EMS_LSBEATS_HOST"]
     tjobid = os.environ["TJOBID"]
+    hostname = socket.gethostname()
+    IPAddr = socket.gethostbyname(hostname)
     headers = {'content-type': 'text/plain'}
     stampers = ""
     monMachines = ""
@@ -31,6 +34,7 @@ if __name__ == "__main__":
       monMachines = f.read()
 
     monMachines = monMachines.replace("TJOBID", tjobid)
+    monMachines = monMachines.replace("DEPLOYIP", IPAddr)
     
     print monMachines
     sys.stdout.flush()
