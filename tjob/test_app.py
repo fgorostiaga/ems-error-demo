@@ -5,6 +5,7 @@ import time
 import requests
 import sys
 import socket
+import random
 
 if __name__ == "__main__":
     print("Starting the test")
@@ -16,7 +17,7 @@ if __name__ == "__main__":
     headers = {'content-type': 'text/plain'}
     stampers = ""
     monMachines = ""
-    emsId = str(os.urandom(10))
+    emsId = str(random.randint())
 
     # get the stampers from file
     with open(os.environ['PWD'] + "/" + "stampers.txt") as f:
