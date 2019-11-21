@@ -10,7 +10,7 @@ import random
 if __name__ == "__main__":
     print("Starting the test")
     
-#    ems = os.environ["ET_EMS_LSBEATS_HOST"]
+    ems = os.environ["ET_EMS_LSBEATS_HOST"]
 #    tjobid = os.environ["TJOBID"]
 #    hostname = socket.gethostname()
 #    IPAddr = socket.gethostbyname(hostname)
@@ -48,8 +48,8 @@ if __name__ == "__main__":
 #    response = requests.post(url, headers=headers, data=monMachines)
 #    print(response.content)
 #    
-#    url = "ws://" + ems + ":3232"
-#    ws = create_connection(url)
+    url = "ws://" + ems + ":3232"
+    ws = create_connection(url)
     
     print "starting loop"
     sys.stdout.flush()
