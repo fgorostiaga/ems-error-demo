@@ -5,7 +5,7 @@ import sys
 import socket
 
 ems = os.environ["ET_EMS_LSBEATS_HOST"]
-appid = os.environ["TJOBID"]
+appid = os.environ["APPID"]
 # TODO: use ET_EMS_HTTPINEVENTS_API
 hostport = 'http://' + ems + ":8181"
 hostname = socket.gethostname()
