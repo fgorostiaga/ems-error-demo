@@ -14,8 +14,8 @@ if __name__ == "__main__":
 #    tjobid = os.environ["TJOBID"]
 #    hostname = socket.gethostname()
 #    IPAddr = socket.gethostbyname(hostname)
-#    headers = {'content-type': 'text/plain'}
-#    stampers = ""
+    headers = {'content-type': 'text/plain'}
+    stampers = ""
 #    monMachines = ""
 #    emsId = str(random.randint(1,1000))
 #
