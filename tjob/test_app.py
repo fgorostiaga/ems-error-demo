@@ -48,8 +48,6 @@ if __name__ == "__main__":
 #    response = requests.post(url, headers=headers, data=monMachines)
 #    print(response.content)
 #    
-    time.sleep(100)
-    exit(0)
     url = "ws://" + ems + ":3232"
     ws = create_connection(url)
     
@@ -62,8 +60,9 @@ if __name__ == "__main__":
             result = ws.recv()
             result = json.loads(result)
             # print "[TJOBIP IS "+ IPAddr + ", EMSID WAS: "+emsId+" , CONTENT: " + str(result) + "]"
-            if "#hostbeat" in result["channels"]:
-                print "[CONTENTTESTNEW: " + str(result) + "]"
+            print "[CONTENTTESTNEW: " + str(result) + "]"
+            # if "#hostbeat" in result["channels"]:
+            #     print "[CONTENTTESTNEW: " + str(result) + "]"
             if "#stop" in result["channels"]:
                 break;
         except Exception, e:
