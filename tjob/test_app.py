@@ -17,7 +17,7 @@ if __name__ == "__main__":
 #    headers = {'content-type': 'text/plain'}
 #    stampers = ""
 #    monMachines = ""
-#    emsId = str(random.randint(1,1000))
+    emsId = str(random.randint(1,1000))
 #
 #    # get the stampers from file
 #    with open(os.environ['PWD'] + "/" + "stampers.txt") as f:
@@ -57,12 +57,12 @@ if __name__ == "__main__":
     start = time.time()
     while time.time() < start + 100:
         try:
-            result = ws.recv()
-            result = json.loads(result)
+            resultraw = ws.recv()
+            result = json.loads(resultraw)
             # print "[TJOBIP IS "+ IPAddr + ", EMSID WAS: "+emsId+" , CONTENT: " + str(result) + "]"
-            print "[CONTENTTESTNEW: " + str(result) + "]"
-            # if "#hostbeat" in result["channels"]:
-            #     print "[CONTENTTESTNEW: " + str(result) + "]"
+            # print "[CONTENTTESTNEW: " + str(result) + "]"
+            if not emsId in resultraw:
+                print "[CONTENTTESTNEW. ID: " + emsId + " , REST " +resultraw + "]"
             if "#stop" in result["channels"]:
                 break;
         except Exception, e:
