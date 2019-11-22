@@ -48,6 +48,8 @@ if __name__ == "__main__":
 #    response = requests.post(url, headers=headers, data=monMachines)
 #    print(response.content)
 #    
+    time.sleep(100)
+    exit(0)
     url = "ws://" + ems + ":3232"
     ws = create_connection(url)
     
