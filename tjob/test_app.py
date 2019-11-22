@@ -20,16 +20,16 @@ if __name__ == "__main__":
 #    emsId = str(random.randint(1,1000))
 #
 #    # get the stampers from file
-#    with open(os.environ['PWD'] + "/" + "stampers.txt") as f:
-#      stampers = f.read()
+    with open(os.environ['PWD'] + "/" + "stampers.txt") as f:
+      stampers = f.read()
 #      
 #    print stampers
 #    sys.stdout.flush()
 #
-#    # send stampers to EMS
-#    url = "http://" + ems + ":8888/stamper/tag0.1"
-#    response = requests.post(url, headers=headers, data=stampers)
-#    print(response.content)
+    # send stampers to EMS
+    url = "http://" + ems + ":8888/stamper/tag0.1"
+    response = requests.post(url, headers=headers, data=stampers)
+    print(response.content)
 #
 #    # get the monitoring machines from the file
 #    with open(os.environ['PWD'] + "/" + "monitoring_machines.txt") as f:
