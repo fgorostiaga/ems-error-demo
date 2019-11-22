@@ -60,7 +60,7 @@ if __name__ == "__main__":
             result = ws.recv()
             result = json.loads(result)
             # print "[TJOBIP IS "+ IPAddr + ", EMSID WAS: "+emsId+" , CONTENT: " + str(result) + "]"
-            if "host" in result:
+            if "#hostbeat" in result["channels"]:
                 print "[CONTENTTESTNEW: " + str(result) + "]"
             if "#stop" in result["channels"]:
                 break;
