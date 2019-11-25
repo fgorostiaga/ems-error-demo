@@ -62,7 +62,7 @@ if __name__ == "__main__":
             # print "[TJOBIP IS "+ IPAddr + ", EMSID WAS: "+emsId+" , CONTENT: " + str(result) + "]"
             # print "[CONTENTTESTNEW: " + str(result) + "]"
             if not emsId in resultraw:
-                print "[CONTENTTESTNEW. ID: " + emsId + " , REST " +resultraw + "]"
+                print "[ID: " + emsId + " , REST " +resultraw + "]"
             if "#stop" in result["channels"]:
                 break;
         except Exception, e:
